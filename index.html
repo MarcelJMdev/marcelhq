@@ -1,153 +1,54 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marcel — marcelhq.de</title>
-  <meta name="description" content="Offizielle Website von Marcel aus Österreich. Links zu Discord, Instagram, TikTok & Snapchat.">
-  
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Font: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-        }
-      }
+      theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] } } }
     }
   </script>
 </head>
-<body class="bg-neutral-950 text-neutral-200 font-sans antialiased selection:bg-red-500/20 selection:text-red-400 min-h-screen flex flex-col justify-between">
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-neutral-800">
 
-  <!-- Background Ambient Glow (Red/White Subtle Austria Touch) -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-red-600/5 blur-[140px] rounded-full"></div>
-  </div>
-
-  <!-- Navigation -->
-  <header class="max-w-4xl mx-auto w-full px-6 pt-8 pb-4 flex justify-between items-center">
-    <a href="/" class="font-extrabold text-xl tracking-tight text-white hover:text-red-500 transition-colors">
-      marcel<span class="text-red-500">hq</span>.de
+  <!-- Header -->
+  <header class="max-w-2xl mx-auto w-full px-6 pt-10 flex justify-between items-center">
+    <a href="/" class="font-extrabold text-lg tracking-tight text-white hover:opacity-80 transition-opacity">
+      marcel<span class="text-neutral-500">hq</span>.de
     </a>
-    
-    <!-- Location Badge -->
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-neutral-800 bg-neutral-900/90 text-xs font-semibold text-neutral-300">
-      <span class="text-base">🇦🇹</span> Österreich
-    </div>
+    <span class="px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900/80 text-xs font-semibold text-neutral-400 flex items-center gap-1.5">
+      🇦🇹 Österreich
+    </span>
   </header>
 
-  <main class="max-w-4xl mx-auto w-full px-6 py-12 flex-grow space-y-16">
-
-    <!-- Hero Section -->
-    <section class="space-y-6">
-      <div class="inline-block px-3 py-1 rounded-md bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-400">
-        @marcelhq
-      </div>
-      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
-        Servus, ich bin Marcel.<br />
-        <span class="text-neutral-400">Creator & Developer aus Österreich.</span>
+  <!-- Main Hero -->
+  <main class="max-w-2xl mx-auto w-full px-6 py-20 my-auto space-y-8">
+    <div class="space-y-3">
+      <h1 class="text-5xl sm:text-7xl font-extrabold text-white tracking-tight">
+        Marcel
       </h1>
-      <p class="text-lg text-neutral-400 max-w-xl leading-relaxed">
-        Willkommen auf meiner HQ-Seite. Hier findest du alle meine Socials, Community-Kanäle und aktuellen Projekte auf einen Blick.
+      <p class="text-xl text-neutral-400 font-medium">
+        Digital HQ & Content Creator.
       </p>
-    </section>
+    </div>
 
-    <!-- Social Media Bento Grid -->
-    <section class="space-y-6">
-      <div class="flex items-center justify-between">
-        <h2 class="text-2xl font-bold text-white tracking-tight">Socials & Hubs</h2>
-        <span class="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Connect</span>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-        <!-- Discord Card (Führt auf /discord) -->
-        <a href="/discord.html" class="group border border-neutral-800/90 bg-neutral-900/50 hover:bg-indigo-950/20 hover:border-indigo-500/50 p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">Discord</span>
-              <span class="text-xs text-neutral-500 group-hover:text-indigo-400 transition-colors">Eigene Seite →</span>
-            </div>
-            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Discord Community</h3>
-            <p class="text-sm text-neutral-400">User: <span class="text-white font-mono font-semibold">zaa_ay</span></p>
-          </div>
-          <div class="pt-4 text-xs font-medium text-neutral-500 group-hover:text-neutral-300">
-            Klicke für Discord-Details & Direct Join
-          </div>
-        </a>
-
-        <!-- Instagram Card -->
-        <a href="https://instagram.com/marcel_381_" target="_blank" rel="noopener" class="group border border-neutral-800/90 bg-neutral-900/50 hover:bg-pink-950/20 hover:border-pink-500/50 p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-pink-500/10 text-pink-400 border border-pink-500/20 font-semibold">Instagram</span>
-              <span class="text-xs text-neutral-500 group-hover:text-pink-400 transition-colors">Öffnen ↗</span>
-            </div>
-            <h3 class="text-xl font-bold text-white group-hover:text-pink-400 transition-colors">@marcel_381_</h3>
-            <p class="text-sm text-neutral-400">Storys, Life & Clips aus Österreich.</p>
-          </div>
-          <div class="pt-4 text-xs font-medium text-neutral-500 group-hover:text-neutral-300">
-            Auf Instagram folgen
-          </div>
-        </a>
-
-        <!-- TikTok Card -->
-        <a href="https://www.tiktok.com/@marcel_361_" target="_blank" rel="noopener" class="group border border-neutral-800/90 bg-neutral-900/50 hover:bg-cyan-950/20 hover:border-cyan-500/50 p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-semibold">TikTok</span>
-              <span class="text-xs text-neutral-500 group-hover:text-cyan-400 transition-colors">Öffnen ↗</span>
-            </div>
-            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">@marcel_361_</h3>
-            <p class="text-sm text-neutral-400">Videos, Content & Short Clips.</p>
-          </div>
-          <div class="pt-4 text-xs font-medium text-neutral-500 group-hover:text-neutral-300">
-            Auf TikTok abonnieren
-          </div>
-        </a>
-
-        <!-- Snapchat Card -->
-        <a href="https://snapchat.com/add/marcel.3611" target="_blank" rel="noopener" class="group border border-neutral-800/90 bg-neutral-900/50 hover:bg-yellow-950/20 hover:border-yellow-500/50 p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 font-semibold">Snapchat</span>
-              <span class="text-xs text-neutral-500 group-hover:text-yellow-400 transition-colors">Öffnen ↗</span>
-            </div>
-            <h3 class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">marcel.3611</h3>
-            <p class="text-sm text-neutral-400">Direct Snaps & Insights.</p>
-          </div>
-          <div class="pt-4 text-xs font-medium text-neutral-500 group-hover:text-neutral-300">
-            Auf Snapchat adden
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- Info Box -->
-    <section class="border border-neutral-800 bg-neutral-900/30 rounded-2xl p-8 space-y-4">
-      <h3 class="text-xl font-bold text-white">Über mich</h3>
-      <p class="text-neutral-400 leading-relaxed">
-        Ich wohne in Österreich 🇦🇹 und beschäftige mich mit Content Creation, Gaming und Tech. Wenn du Fragen hast oder zusammenarbeiten willst, schreib mir am besten direkt auf Discord (<code class="text-white font-mono">zaa_ay</code>) oder Insta!
-      </p>
-    </section>
-
+    <!-- Quick Navigation Button -->
+    <div class="pt-4">
+      <a href="/social" class="inline-flex items-center justify-center w-full sm:w-auto py-4 px-8 rounded-2xl bg-white text-neutral-950 font-bold text-center hover:bg-neutral-200 transition-all text-sm shadow-lg">
+        Social Links ansehen →
+      </a>
+    </div>
   </main>
 
-  <footer class="max-w-4xl mx-auto w-full px-6 py-8 border-t border-neutral-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
-    <p>© 2026 Marcel — marcelhq.de</p>
-    <div class="flex items-center gap-4">
-      <span>🇦🇹 Made in Austria</span>
-    </div>
+  <!-- Footer -->
+  <footer class="max-w-2xl mx-auto w-full px-6 py-8 text-xs text-neutral-600 flex justify-between">
+    <span>© 2026 Marcel</span>
+    <span>marcelhq.de</span>
   </footer>
 
 </body>
