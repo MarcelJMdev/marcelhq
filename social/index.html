@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socials — Marcel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] } } }
+    }
+  </script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-neutral-800">
+
+  <!-- Header -->
+  <header class="max-w-md mx-auto w-full px-6 pt-10 flex justify-between items-center">
+    <a href="/" class="text-xs font-semibold text-neutral-400 hover:text-white transition-colors flex items-center gap-1">
+      ← Home
+    </a>
+    <span class="text-xs font-mono text-neutral-600">marcelhq.de/social</span>
+  </header>
+
+  <!-- Social Links -->
+  <main class="max-w-md mx-auto w-full px-6 py-10 my-auto space-y-6">
+    <div class="space-y-1">
+      <h1 class="text-3xl font-extrabold text-white tracking-tight">Socials</h1>
+      <p class="text-xs text-neutral-500">Alle Kanäle auf einen Blick.</p>
+    </div>
+
+    <div class="space-y-3">
+
+      <!-- Discord (Kopieren per Klick) -->
+      <button onclick="copyDiscord()" class="w-full text-left group flex items-center justify-between p-4 rounded-2xl bg-neutral-900 border border-neutral-800/80 hover:border-indigo-500/50 hover:bg-neutral-900/80 transition-all">
+        <div class="flex items-center gap-4">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogowik.com%2Fcontent%2Fuploads%2Fimages%2Fdiscord-blue-icon1720879153.logowik.com.webp&f=1&nofb=1&ipt=40aa721303aaac584af89815dd8860d3e349c32b790a21a9ac47d2c619348b35" alt="Discord" class="w-10 h-10 rounded-xl object-cover bg-neutral-950 p-1">
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-indigo-400 transition-colors">Discord</div>
+            <div class="text-xs font-mono text-neutral-400">zaa_ay</div>
+          </div>
+        </div>
+        <span id="discordStatus" class="text-xs font-semibold text-neutral-500 group-hover:text-white transition-colors">Kopieren</span>
+      </button>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/marcel_381_" target="_blank" rel="noopener" class="group flex items-center justify-between p-4 rounded-2xl bg-neutral-900 border border-neutral-800/80 hover:border-pink-500/50 hover:bg-neutral-900/80 transition-all">
+        <div class="flex items-center gap-4">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fmiddle%2F1-13590_copyright-clipart.png&f=1&nofb=1&ipt=ee6841adb205dfa4d91ff0a1939f27449c8455c9a6ff17aec48a260cd1f5aeaa" alt="Instagram" class="w-10 h-10 rounded-xl object-cover bg-neutral-950 p-1">
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-pink-400 transition-colors">Instagram</div>
+            <div class="text-xs font-mono text-neutral-400">marcel_381_</div>
+          </div>
+        </div>
+        <span class="text-xs text-neutral-500 group-hover:text-white transition-colors">Öffnen ↗</span>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@marcel_361_" target="_blank" rel="noopener" class="group flex items-center justify-between p-4 rounded-2xl bg-neutral-900 border border-neutral-800/80 hover:border-cyan-500/50 hover:bg-neutral-900/80 transition-all">
+        <div class="flex items-center gap-4">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fvecteurs-premium%2Flogo-du-cercle-tiktok-logo-medias-sociaux-noir_197792-5287.jpg&f=1&nofb=1&ipt=fcedc6a814263bc8cd8998acd529fcd399ee974086e032ff90b2ff2be8ddc17b" alt="TikTok" class="w-10 h-10 rounded-xl object-cover bg-neutral-950 p-0.5">
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">TikTok</div>
+            <div class="text-xs font-mono text-neutral-400">marcel_361_</div>
+          </div>
+        </div>
+        <span class="text-xs text-neutral-500 group-hover:text-white transition-colors">Öffnen ↗</span>
+      </a>
+
+      <!-- Snapchat -->
+      <a href="https://snapchat.com/add/marcel.3611" target="_blank" rel="noopener" class="group flex items-center justify-between p-4 rounded-2xl bg-neutral-900 border border-neutral-800/80 hover:border-yellow-500/50 hover:bg-neutral-900/80 transition-all">
+        <div class="flex items-center gap-4">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F023%2F741%2F087%2Foriginal%2Fsnapchat-logo-icon-social-media-icon-free-png.png&f=1&nofb=1&ipt=3fabaabee60073ca0b1ae3375deade1070823f4adbb3c0918a95b37676da4bd3" alt="Snapchat" class="w-10 h-10 rounded-xl object-cover bg-neutral-950 p-1">
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-yellow-400 transition-colors">Snapchat</div>
+            <div class="text-xs font-mono text-neutral-400">marcel.3611</div>
+          </div>
+        </div>
+        <span class="text-xs text-neutral-500 group-hover:text-white transition-colors">Öffnen ↗</span>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-md mx-auto w-full px-6 py-8 text-center text-xs text-neutral-600">
+    🇦🇹 Marcel — marcelhq.de
+  </footer>
+
+  <script>
+    function copyDiscord() {
+      navigator.clipboard.writeText("zaa_ay");
+      const status = document.getElementById("discordStatus");
+      status.innerText = "✓ Kopiert!";
+      status.classList.add("text-emerald-400");
+      
+      setTimeout(() => {
+        status.innerText = "Kopieren";
+        status.classList.remove("text-emerald-400");
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
