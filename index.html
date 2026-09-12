@@ -1,10 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="de" class="scroll-smooth">
 <head>
-    <title>MarcelHQ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcel — Personal Site</title>
+  <meta name="description" content="Offizielle Website von Marcel. Fokus auf [Dein Spezialgebiet].">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Modern Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-    <h1>MarcelHQ</h1>
-    <p>Welcome to my website.</p>
+<body class="bg-neutral-950 text-neutral-200 font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-400 min-h-screen flex flex-col justify-between">
+
+  <!-- Subtle Ambient Background Glow -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[120px] rounded-full"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="max-w-4xl mx-auto w-full px-6 pt-8 pb-4 flex justify-between items-center">
+    <a href="#" class="font-extrabold text-xl tracking-tight text-white hover:text-emerald-400 transition-colors">
+      marcel<span class="text-emerald-500">hq</span>.de
+    </a>
+    
+    <!-- Availability Badge -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900/80 text-xs font-medium text-neutral-300">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </span>
+      Offen für neue Projekte
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto w-full px-6 py-12 flex-grow space-y-20">
+
+    <!-- Hero Section -->
+    <section class="space-y-6">
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
+        Hi, ich bin Marcel.<br />
+        <span class="text-neutral-400">Ich baue digitale Produkte mit Fokus auf Qualität.</span>
+      </h1>
+      
+      <p class="text-lg text-neutral-400 max-w-2xl leading-relaxed">
+        Willkommen auf meiner digitalen Zentrale. Hier teile ich meine aktuellen Projekte, woran ich arbeite und wie du mich erreichen kannst. Kein Bla-Bla, nur echtes Handwerk.
+      </p>
+
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="#contact" class="px-5 py-3 rounded-xl bg-white text-neutral-950 font-semibold hover:bg-neutral-200 transition-all transform active:scale-95 text-sm">
+          Kontakt aufnehmen
+        </a>
+        <a href="#projects" class="px-5 py-3 rounded-xl border border-neutral-800 bg-neutral-900/50 font-semibold text-neutral-300 hover:border-neutral-700 hover:text-white transition-all text-sm">
+          Projekte ansehen ↓
+        </a>
+      </div>
+    </section>
+
+    <!-- Projects / Bento Grid -->
+    <section id="projects" class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold text-white tracking-tight">Ausgewählte Arbeiten</h2>
+        <span class="text-xs uppercase tracking-widest text-neutral-500 font-semibold">Projekt-Highlights</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- Card 1 -->
+        <div class="group border border-neutral-800/80 bg-neutral-900/40 rounded-2xl p-6 hover:border-neutral-700 hover:bg-neutral-900/80 transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-2.5 py-0.5 rounded-full">
+                SaaS / App
+              </span>
+              <span class="text-xs text-neutral-500">2026</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+              Projekt Name Eins
+            </h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Ein kurzes, prägnantes Satz-Statement dazu, was das Projekt löst. Zum Beispiel ein Tool für automatisierte Workflows.
+            </p>
+          </div>
+          <div class="pt-6 flex items-center text-xs font-semibold text-neutral-400 group-hover:text-white">
+            Case Study ansehen →
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group border border-neutral-800/80 bg-neutral-900/40 rounded-2xl p-6 hover:border-neutral-700 hover:bg-neutral-900/80 transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-blue-400 bg-blue-950/60 border border-blue-800/40 px-2.5 py-0.5 rounded-full">
+                Design System
+              </span>
+              <span class="text-xs text-neutral-500">2025</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+              Projekt Name Zwei
+            </h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Minimalistisches Framework für performante Dashboards. Extrem schnell, barrierefrei und modular aufgebaut.
+            </p>
+          </div>
+          <div class="pt-6 flex items-center text-xs font-semibold text-neutral-400 group-hover:text-white">
+            Demo öffnen →
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Stack / Tech / Werkzeuge -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-white tracking-tight">Tech Stack & Tools</h2>
+      <p class="text-sm text-neutral-400 max-w-xl">
+        Werkzeuge, mit denen ich täglich arbeite, um moderne digitale Lösungen zu entwickeln:
+      </p>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900/60 text-xs font-medium text-neutral-300">TypeScript</span>
+        <span class="px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900/60 text-xs font-medium text-neutral-300">Next.js / React</span>
+        <span class="px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900/60 text-xs font-medium text-neutral-300">Tailwind CSS</span>
+        <span class="px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900/60 text-xs font-medium text-neutral-300">Node.js</span>
+        <span class="px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900/60 text-xs font-medium text-neutral-300">Figma</span>
+        <span class="px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900/60 text-xs font-medium text-neutral-300">PostgreSQL</span>
+        <span class="px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900/60 text-xs font-medium text-neutral-300">Git / GitHub</span>
+      </div>
+    </section>
+
+    <!-- Over Me / Story Section -->
+    <section class="border-t border-neutral-800/80 pt-12 space-y-4">
+      <h2 class="text-2xl font-bold text-white tracking-tight">Über mich</h2>
+      <div class="text-neutral-400 space-y-4 text-base leading-relaxed max-w-2xl">
+        <p>
+          Ich konzentriere mich darauf, sauberen Code und funktionales Design zusammenzubringen. Statt überladener Features liefere ich lieber schlanke, durchdachte Systeme.
+        </p>
+        <p>
+          Außerhalb von Code und Projekten interessiere ich mich für [Dein Hobby / Interesse, z.B. Open Source, Fotografie, Tech-Gagets oder Sport].
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="border border-neutral-800 bg-gradient-to-b from-neutral-900/80 to-neutral-950 rounded-3xl p-8 sm:p-12 text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Lass uns quatschen.
+      </h2>
+      <p class="text-neutral-400 max-w-md mx-auto text-sm sm:text-base">
+        Hast du ein spannendes Projekt, eine Idee oder möchtest dich einfach austauschen? Schreib mir eine Nachricht.
+      </p>
+      <div class="pt-2">
+        <a href="mailto:kontakt@marcelhq.de" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-emerald-500 text-neutral-950 font-bold hover:bg-emerald-400 transition-all transform active:scale-95 shadow-lg shadow-emerald-500/10">
+          kontakt@marcelhq.de
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-4xl mx-auto w-full px-6 py-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+    <p>© 2026 Marcel — marcelhq.de</p>
+    <div class="flex items-center gap-6">
+      <a href="https://github.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">GitHub</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+      <a href="https://x.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">X / Twitter</a>
+    </div>
+  </footer>
+
 </body>
 </html>
