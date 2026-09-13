@@ -13,27 +13,18 @@
     tailwind.config = {
       theme: { 
         extend: { 
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
-          animation: {
-            'glow-pulse': 'pulse 3s infinite ease-in-out',
-            'float': 'float 4s ease-in-out infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-8px)' },
-            }
-          }
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
         } 
       }
     }
   </script>
 
   <style>
-    .spec-card {
+    /* Clean Smooth Animations */
+    .animate-fade-in {
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transform: translateY(16px);
+      animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     @keyframes fadeInUp {
       to {
@@ -45,76 +36,76 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-emerald-500/20 selection:text-emerald-400">
 
-  <!-- Ambient Background Light -->
+  <!-- Ambient Light Effect -->
   <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-500/10 blur-[140px] rounded-full"></div>
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/10 blur-[140px] rounded-full"></div>
   </div>
 
   <!-- Header -->
-  <header class="max-w-3xl mx-auto w-full px-6 pt-10 flex justify-between items-center">
-    <a href="/social" class="text-xs font-semibold text-neutral-400 hover:text-white transition-colors flex items-center gap-1">
-      ← Zurück zu Socials
+  <header class="animate-fade-in max-w-3xl mx-auto w-full px-6 pt-10 flex justify-between items-center" style="animation-delay: 0.05s;">
+    <a href="/" class="text-xs font-semibold text-neutral-400 hover:text-white transition-colors flex items-center gap-1">
+      ← Home
     </a>
-    <span class="text-xs font-mono text-neutral-500 bg-neutral-900 border border-neutral-800 px-3 py-1 rounded-full">
+    <span class="text-xs font-mono text-neutral-500 bg-neutral-900/80 border border-neutral-800 px-3 py-1 rounded-full backdrop-blur-md">
       marcelhq.de/eride
     </span>
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-3xl mx-auto w-full px-6 py-10 my-auto space-y-12">
+  <main class="max-w-3xl mx-auto w-full px-6 py-10 my-auto space-y-10">
     
     <!-- Title & Badge -->
-    <div class="space-y-2 text-center sm:text-left">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-950/60 border border-emerald-800/40 text-emerald-400 text-xs font-mono font-bold tracking-wider uppercase">
+    <div class="animate-fade-in space-y-3" style="animation-delay: 0.12s;">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/40 text-emerald-400 text-xs font-mono font-bold tracking-wider uppercase">
         ⚡ Electric Beast
       </div>
       <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight">
         E-Ride Pro SS 3.0
       </h1>
-      <p class="text-sm sm:text-base text-neutral-400">
+      <p class="text-sm sm:text-base text-neutral-400 font-medium">
         Pure Power. Next-Gen Offroad Performance.
       </p>
     </div>
 
     <!-- Bike Showcase Image Frame -->
-    <div class="relative group rounded-3xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl transition-all duration-500 hover:border-emerald-500/40">
+    <div class="animate-fade-in relative group rounded-3xl overflow-hidden border border-neutral-800/90 bg-neutral-900/40 shadow-2xl transition-all duration-500 hover:border-emerald-500/40" style="animation-delay: 0.20s;">
       
-      <!-- Subtle Neon Glow behind Image -->
-      <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent z-10 opacity-80"></div>
+      <!-- Subtle Overlay Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-transparent to-transparent z-10"></div>
       
       <!-- User's Bike Image -->
       <img src="https://cdn.discordapp.com/attachments/1547288676025770074/1548411892576428292/IMG_3682.jpg?ex=6aa6f673&is=6aa5a4f3&hm=8f12bcac497d4d6af75ee3c39df5d8515e1cb01fa967ca5286d1d76c06c20675&" 
            alt="E-Ride Pro SS 3.0 Marcel" 
-           class="w-full h-[350px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700">
+           class="w-full h-[320px] sm:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
 
       <!-- Floating Badge on Image -->
-      <div class="absolute bottom-6 left-6 z-20 flex items-center gap-3">
-        <span class="px-4 py-2 rounded-xl bg-neutral-950/80 backdrop-blur-md border border-neutral-800 text-xs font-bold text-white shadow-lg">
-          🇦🇹 Marcel's Ride
+      <div class="absolute bottom-5 left-5 z-20">
+        <span class="px-4 py-2 rounded-xl bg-neutral-950/80 backdrop-blur-md border border-neutral-800/80 text-xs font-bold text-white shadow-lg flex items-center gap-2">
+          <span>🇦🇹</span> Marcel's Ride
         </span>
       </div>
     </div>
 
-    <!-- Animated Specs Grid -->
+    <!-- Technical Specifications Grid -->
     <div class="space-y-4">
-      <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-neutral-500">
+      <h2 class="animate-fade-in text-xs uppercase font-mono font-bold tracking-widest text-neutral-500" style="animation-delay: 0.28s;">
         // Technical Specifications
       </h2>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
 
-        <!-- Spec 1: Leistung -->
-        <div class="spec-card bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300" style="animation-delay: 0.1s;">
-          <div class="text-xs text-neutral-500 font-medium">Peak Power</div>
+        <!-- Spec 1: Peak Power -->
+        <div class="animate-fade-in bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300 backdrop-blur-sm" style="animation-delay: 0.32s;">
+          <div class="text-xs text-neutral-500 font-semibold">Peak Power</div>
           <div class="text-2xl sm:text-3xl font-black text-white mt-1">
             21,5 <span class="text-sm font-bold text-emerald-400">PS</span>
           </div>
           <div class="text-[11px] text-neutral-400 mt-1 font-mono">~16 kW Motor</div>
         </div>
 
-        <!-- Spec 2: Akku -->
-        <div class="spec-card bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300" style="animation-delay: 0.2s;">
-          <div class="text-xs text-neutral-500 font-medium">Battery Pack</div>
+        <!-- Spec 2: Battery Pack -->
+        <div class="animate-fade-in bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300 backdrop-blur-sm" style="animation-delay: 0.38s;">
+          <div class="text-xs text-neutral-500 font-semibold">Battery Pack</div>
           <div class="text-2xl sm:text-3xl font-black text-white mt-1">
             72V <span class="text-sm font-bold text-emerald-400">40Ah</span>
           </div>
@@ -122,8 +113,8 @@
         </div>
 
         <!-- Spec 3: Top Speed -->
-        <div class="spec-card bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300" style="animation-delay: 0.3s;">
-          <div class="text-xs text-neutral-500 font-medium">Top Speed</div>
+        <div class="animate-fade-in bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300 backdrop-blur-sm" style="animation-delay: 0.44s;">
+          <div class="text-xs text-neutral-500 font-semibold">Top Speed</div>
           <div class="text-2xl sm:text-3xl font-black text-white mt-1">
             96+ <span class="text-sm font-bold text-emerald-400">km/h</span>
           </div>
@@ -131,26 +122,26 @@
         </div>
 
         <!-- Spec 4: Acceleration -->
-        <div class="spec-card bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300" style="animation-delay: 0.4s;">
-          <div class="text-xs text-neutral-500 font-medium">0 - 50 km/h</div>
+        <div class="animate-fade-in bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300 backdrop-blur-sm" style="animation-delay: 0.50s;">
+          <div class="text-xs text-neutral-500 font-semibold">0 - 50 km/h</div>
           <div class="text-2xl sm:text-3xl font-black text-white mt-1">
             2.3 <span class="text-sm font-bold text-emerald-400">sec</span>
           </div>
           <div class="text-[11px] text-neutral-400 mt-1 font-mono">Instant Torque</div>
         </div>
 
-        <!-- Spec 5: Weight -->
-        <div class="spec-card bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300" style="animation-delay: 0.5s;">
-          <div class="text-xs text-neutral-500 font-medium">Weight</div>
+        <!-- Spec 5: Weight (Geändert auf 75 kg) -->
+        <div class="animate-fade-in bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300 backdrop-blur-sm" style="animation-delay: 0.56s;">
+          <div class="text-xs text-neutral-500 font-semibold">Weight</div>
           <div class="text-2xl sm:text-3xl font-black text-white mt-1">
-            63 <span class="text-sm font-bold text-emerald-400">kg</span>
+            75 <span class="text-sm font-bold text-emerald-400">kg</span>
           </div>
-          <div class="text-[11px] text-neutral-400 mt-1 font-mono">Ultra Lightweight</div>
+          <div class="text-[11px] text-neutral-400 mt-1 font-mono">Lightweight Offroad</div>
         </div>
 
-        <!-- Spec 6: Suspension -->
-        <div class="spec-card bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300" style="animation-delay: 0.6s;">
-          <div class="text-xs text-neutral-500 font-medium">Version</div>
+        <!-- Spec 6: Version -->
+        <div class="animate-fade-in bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/50 p-5 rounded-2xl transition-all duration-300 backdrop-blur-sm" style="animation-delay: 0.62s;">
+          <div class="text-xs text-neutral-500 font-semibold">Version</div>
           <div class="text-2xl sm:text-3xl font-black text-white mt-1">
             3.0 <span class="text-sm font-bold text-emerald-400">Pro</span>
           </div>
@@ -163,7 +154,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="max-w-3xl mx-auto w-full px-6 py-8 text-center text-xs text-neutral-600">
+  <footer class="animate-fade-in max-w-3xl mx-auto w-full px-6 py-8 text-center text-xs text-neutral-600" style="animation-delay: 0.68s;">
     © Marcel — marcelhq.de/eride
   </footer>
 
