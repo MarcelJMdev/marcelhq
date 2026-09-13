@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marcel — marcelhq.de</title>
+  <title>Socials — Marcel</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,76 +31,115 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-neutral-800">
 
-  <!-- Ambient Light Effect -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[140px] rounded-full"></div>
-  </div>
-
   <!-- Header -->
-  <header class="animate-fade-in max-w-2xl mx-auto w-full px-6 pt-10 flex justify-between items-center" style="animation-delay: 0.05s;">
-    <a href="/" class="font-extrabold text-lg tracking-tight text-white hover:opacity-80 transition-opacity">
-      marcel<span class="text-neutral-500">hq</span>.de
+  <header class="animate-fade-in max-w-md mx-auto w-full px-6 pt-10 flex justify-between items-center" style="animation-delay: 0.05s;">
+    <a href="/" class="text-xs font-semibold text-neutral-400 hover:text-white transition-colors flex items-center gap-1">
+      ← Home
     </a>
-    <span class="px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900/80 text-xs font-semibold text-neutral-400 flex items-center gap-1.5 shadow-sm">
-      🇦🇹 Österreich
-    </span>
+    <span class="text-xs font-mono text-neutral-600">marcelhq.de/social</span>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-2xl mx-auto w-full px-6 py-12 my-auto space-y-8">
+  <!-- Social Links -->
+  <main class="max-w-md mx-auto w-full px-6 py-10 my-auto space-y-6">
     
-    <!-- Hero Text -->
-    <div class="animate-fade-in space-y-3" style="animation-delay: 0.15s;">
-      <h1 class="text-5xl sm:text-7xl font-extrabold text-white tracking-tight">
-        Marcel
-      </h1>
-      <p class="text-lg sm:text-xl text-neutral-400 font-medium leading-relaxed">
-        Digital HQ & Content Creator.
-      </p>
+    <div class="animate-fade-in space-y-1" style="animation-delay: 0.1s;">
+      <h1 class="text-3xl font-extrabold text-white tracking-tight">Socials</h1>
+      <p class="text-xs text-neutral-500">Alle Kanäle auf einen Blick.</p>
     </div>
 
-    <!-- Interactive Cards / Buttons -->
-    <div class="space-y-3 pt-2">
-      
-      <!-- Primary CTA: Socials Button -->
-      <a href="/social" class="animate-fade-in group flex items-center justify-between py-4 px-6 rounded-2xl bg-white text-neutral-950 font-bold hover:bg-neutral-200 transition-all text-sm shadow-xl transform active:scale-[0.99]" style="animation-delay: 0.25s;">
-        <span class="flex items-center gap-2.5">
-          <span>Social Media & Links</span>
-        </span>
-        <span class="text-neutral-500 group-hover:translate-x-1 transition-transform">→</span>
+    <div class="space-y-3">
+
+      <!-- Discord (Kopieren per Klick) - Zoom verringert -->
+      <button onclick="copyDiscord()" class="animate-fade-in w-full text-left group flex items-center justify-between p-4 rounded-2xl bg-neutral-900/80 border border-neutral-800/80 hover:border-indigo-500/50 hover:bg-neutral-900 transition-all duration-300 active:scale-[0.99]" style="animation-delay: 0.18s;">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-xl overflow-hidden bg-neutral-950 border border-neutral-800 flex items-center justify-center p-0 shrink-0">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogowik.com%2Fcontent%2Fuploads%2Fimages%2Fdiscord-blue-icon1720879153.logowik.com.webp&f=1&nofb=1&ipt=40aa721303aaac584af89815dd8860d3e349c32b790a21a9ac47d2c619348b35" alt="Discord" class="w-full h-full object-cover scale-105 group-hover:scale-115 transition-transform duration-300">
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-indigo-400 transition-colors">Discord</div>
+            <div class="text-xs font-mono text-neutral-400">zaa_ay</div>
+          </div>
+        </div>
+        <span id="discordStatus" class="text-xs font-semibold text-neutral-500 group-hover:text-white transition-colors">Kopieren</span>
+      </button>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/marcel_381_" target="_blank" rel="noopener" class="animate-fade-in group flex items-center justify-between p-4 rounded-2xl bg-neutral-900/80 border border-neutral-800/80 hover:border-pink-500/50 hover:bg-neutral-900 transition-all duration-300 active:scale-[0.99]" style="animation-delay: 0.26s;">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-xl overflow-hidden bg-neutral-950 border border-neutral-800 flex items-center justify-center p-0 shrink-0">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fmiddle%2F1-13590_copyright-clipart.png&f=1&nofb=1&ipt=ee6841adb205dfa4d91ff0a1939f27449c8455c9a6ff17aec48a260cd1f5aeaa" alt="Instagram" class="w-full h-full object-cover scale-125 group-hover:scale-135 transition-transform duration-300">
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-pink-400 transition-colors">Instagram</div>
+            <div class="text-xs font-mono text-neutral-400">marcel_381_</div>
+          </div>
+        </div>
+        <span class="text-xs text-neutral-500 group-hover:text-white transition-colors">Öffnen ↗</span>
       </a>
 
-      <!-- Bike Button / Card (E-Ride Pro SS 3.0) mit E-Ride Logo -->
-      <a href="/eride" class="animate-fade-in group relative block p-5 rounded-2xl bg-neutral-900/70 border border-neutral-800 hover:border-emerald-500/40 hover:bg-neutral-900 transition-all duration-300 shadow-lg transform active:scale-[0.99] overflow-hidden" style="animation-delay: 0.35s;">
-        <!-- Subtle Glow on Hover -->
-        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-emerald-500/10 blur-2xl rounded-full group-hover:bg-emerald-500/20 transition-all"></div>
-        
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="flex items-center gap-4">
-            <!-- E-Ride Logo Icon -->
-            <div class="w-11 h-11 rounded-xl overflow-hidden bg-black border border-neutral-800 flex items-center justify-center p-0 shrink-0 group-hover:scale-105 transition-transform duration-300">
-              <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Feridepro.co.nz%2Fcdn%2Fshop%2Ffiles%2FERIDE_LOGO_b09c14ef-c68a-480f-9f41-5d97b3a8613a.jpg%3Fv%3D1754978287%26width%3D750&f=1&nofb=1&ipt=523f20d0575d4925a588dfc11368d6d058a61767b03c83e40d1d3eb48f92f690" alt="E-Ride Pro Logo" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">E-Ride Pro SS 3.0</span>
-                <span class="px-2 py-0.5 rounded-full bg-emerald-950 border border-emerald-800/50 text-[10px] font-mono font-bold text-emerald-400">21,5 PS</span>
-              </div>
-              <p class="text-xs text-neutral-400 mt-0.5 font-mono">Bike Showcase & Specs</p>
-            </div>
+      <!-- TikTok - Kreisförmig & etwas mehr Zoom -->
+      <a href="https://www.tiktok.com/@marcel_361_" target="_blank" rel="noopener" class="animate-fade-in group flex items-center justify-between p-4 rounded-2xl bg-neutral-900/80 border border-neutral-800/80 hover:border-cyan-500/50 hover:bg-neutral-900 transition-all duration-300 active:scale-[0.99]" style="animation-delay: 0.34s;">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full overflow-hidden bg-black border border-neutral-800 flex items-center justify-center p-0 shrink-0">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fvecteurs-premium%2Flogo-du-cercle-tiktok-logo-medias-sociaux-noir_197792-5287.jpg&f=1&nofb=1&ipt=fcedc6a814263bc8cd8998acd529fcd399ee974086e032ff90b2ff2be8ddc17b" alt="TikTok" class="w-full h-full object-cover scale-130 group-hover:scale-140 transition-transform duration-300">
           </div>
-          <span class="text-xs font-semibold text-neutral-500 group-hover:text-white group-hover:translate-x-1 transition-all">Ansehen →</span>
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">TikTok</div>
+            <div class="text-xs font-mono text-neutral-400">marcel_361_</div>
+          </div>
         </div>
+        <span class="text-xs text-neutral-500 group-hover:text-white transition-colors">Öffnen ↗</span>
+      </a>
+
+      <!-- Snapchat -->
+      <a href="https://snapchat.com/add/marcel.3611" target="_blank" rel="noopener" class="animate-fade-in group flex items-center justify-between p-4 rounded-2xl bg-neutral-900/80 border border-neutral-800/80 hover:border-yellow-500/50 hover:bg-neutral-900 transition-all duration-300 active:scale-[0.99]" style="animation-delay: 0.42s;">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-xl overflow-hidden bg-neutral-950 border border-neutral-800 flex items-center justify-center p-0 shrink-0">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F023%2F741%2F087%2Foriginal%2Fsnapchat-logo-icon-social-media-icon-free-png.png&f=1&nofb=1&ipt=3fabaabee60073ca0b1ae3375deade1070823f4adbb3c0918a95b37676da4bd3" alt="Snapchat" class="w-full h-full object-cover scale-125 group-hover:scale-135 transition-transform duration-300">
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-yellow-400 transition-colors">Snapchat</div>
+            <div class="text-xs font-mono text-neutral-400">marcel.3611</div>
+          </div>
+        </div>
+        <span class="text-xs text-neutral-500 group-hover:text-white transition-colors">Öffnen ↗</span>
+      </a>
+
+      <!-- E-Ride Pro SS Link Card mit E-Ride Logo -->
+      <a href="/eride" class="animate-fade-in group flex items-center justify-between p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/40 hover:bg-neutral-900 transition-all duration-300 mt-6 active:scale-[0.99]" style="animation-delay: 0.50s;">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-xl overflow-hidden bg-black border border-neutral-800 flex items-center justify-center p-0 shrink-0 group-hover:scale-105 transition-transform duration-300">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Feridepro.co.nz%2Fcdn%2Fshop%2Ffiles%2FERIDE_LOGO_b09c14ef-c68a-480f-9f41-5d97b3a8613a.jpg%3Fv%3D1754978287%26width%3D750&f=1&nofb=1&ipt=523f20d0575d4925a588dfc11368d6d058a61767b03c83e40d1d3eb48f92f690" alt="E-Ride Pro Logo" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">E-Ride Pro SS 3.0</div>
+            <div class="text-xs font-mono text-neutral-400">Bike Specs & Showcase</div>
+          </div>
+        </div>
+        <span class="text-xs text-neutral-500 group-hover:text-white transition-colors">Ansehen →</span>
       </a>
 
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="animate-fade-in max-w-2xl mx-auto w-full px-6 py-8 text-xs text-neutral-600 flex justify-between" style="animation-delay: 0.45s;">
-    <span>© 2026 Marcel</span>
-    <span>marcelhq.de</span>
+  <footer class="animate-fade-in max-w-md mx-auto w-full px-6 py-8 text-center text-xs text-neutral-600" style="animation-delay: 0.58s;">
+    🇦🇹 Marcel — marcelhq.de
   </footer>
+
+  <script>
+    function copyDiscord() {
+      navigator.clipboard.writeText("zaa_ay");
+      const status = document.getElementById("discordStatus");
+      status.innerText = "✓ Kopiert!";
+      status.classList.add("text-emerald-400");
+      
+      setTimeout(() => {
+        status.innerText = "Kopieren";
+        status.classList.remove("text-emerald-400");
+      }, 2000);
+    }
+  </script>
 
 </body>
 </html>
