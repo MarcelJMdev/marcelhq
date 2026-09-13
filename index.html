@@ -25,11 +25,11 @@
   </script>
 
   <style>
-    /* Ultra-cleane, sanfte und langsamere Animation */
+    /* Clean, verlangsamte Apple-Style Smooth Animation */
     .animate-pop-in {
       opacity: 0;
-      transform: translateY(24px) scale(0.97);
-      filter: blur(4px);
+      transform: translateY(22px) scale(0.97);
+      filter: blur(6px);
       animation: smoothGlide 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
@@ -54,9 +54,9 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-neutral-800 overflow-x-hidden">
 
-  <!-- Ambient Light Effect (Hintergrund leuchten) -->
+  <!-- Ambient Light Effect -->
   <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[650px] h-[380px] bg-white/4 blur-[150px] rounded-full"></div>
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[650px] h-[380px] bg-white/5 blur-[150px] rounded-full"></div>
   </div>
 
   <!-- FLOATING MINI-PLAYER ANZEIGE (OBEN RECHTS) -->
@@ -103,7 +103,7 @@
     </span>
   </header>
 
-  <!-- DYNAMISCHER CONTAINER FOR ROUTING (Hier liegt der Fix für die Zentrierung!) -->
+  <!-- MAIN CONTAINER (ZENTRIERT & DYNAMISCH) -->
   <main id="app-main" class="max-w-2xl mx-auto w-full px-6 py-10 flex-grow flex flex-col justify-center space-y-8">
     
     <!-- Hero Section -->
@@ -124,10 +124,10 @@
       </div>
     </div>
 
-    <!-- ORIGINALER SOCIAL & E-RIDE BEREICH + PLAYER -->
+    <!-- SOCIAL & E-RIDE BEREICH + PLAYER -->
     <div class="space-y-3.5 pt-2 w-full">
       
-      <!-- Social Media Button (Original) -->
+      <!-- Social Media Button -->
       <a href="/social" class="animate-pop-in group flex items-center justify-between py-4 px-6 rounded-2xl bg-white text-neutral-950 font-bold hover:bg-neutral-200 transition-all duration-500 text-sm shadow-xl transform hover:-translate-y-0.5 active:scale-[0.98]" style="animation-delay: 0.55s;">
         <span class="flex items-center gap-2.5">
           <span>Social Media & Links</span>
@@ -135,7 +135,7 @@
         <span class="text-neutral-500 group-hover:translate-x-1 transition-transform duration-500">→</span>
       </a>
 
-      <!-- E-Ride Pro SS 3.0 Card (Original) -->
+      <!-- E-Ride Pro SS 3.0 Card -->
       <a href="/eride" class="animate-pop-in group relative block p-5 rounded-2xl bg-neutral-900/70 border border-neutral-800 hover:border-emerald-500/40 hover:bg-neutral-900 transition-all duration-500 shadow-lg transform hover:-translate-y-0.5 active:scale-[0.98] overflow-hidden" style="animation-delay: 0.7s;">
         <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-emerald-500/10 blur-2xl rounded-full group-hover:bg-emerald-500/20 transition-all duration-500"></div>
         
@@ -222,7 +222,7 @@
     <span class="animate-pop-in" style="animation-delay: 1.0s;">marcelhq.de</span>
   </footer>
 
-  <!-- MUSIC PLAYER & SMOOTH ROUTING LOGIC -->
+  <!-- MUSIC PLAYER & FIXED ROUTING LOGIC -->
   <script>
     const playlist = [
       { title: "Traum V2", artist: "Ufo361", src: "/songs/traum.mp3" },
@@ -257,8 +257,6 @@
       const mainPlayerCard = document.getElementById("main-player-card");
       if (!mainPlayerCard && !audio.paused) {
         miniPlayer.classList.remove("hidden");
-        miniPlayer.style.opacity = "1";
-        miniPlayer.style.transform = "translateY(0)";
       } else if (mainPlayerCard) {
         miniPlayer.classList.add("hidden");
       }
@@ -340,12 +338,14 @@
 
     audio.addEventListener("ended", () => nextSong());
 
-    // GEFIXTER ROUTER: Die Breite (max-w-2xl) bleibt jetzt zu 100% erhalten!
+    // GEFIXTER ROUTER: Zwingt jede Unterseite garantiert in die zentrierte Breite!
     document.addEventListener("click", (e) => {
       const link = e.target.closest("a");
       if (link && link.origin === window.location.origin && !link.getAttribute("target")) {
-        e.preventDefault();
         const href = link.getAttribute("href");
+        if (!href || href === "#") return;
+
+        e.preventDefault();
         
         fetch(href)
           .then(res => res.text())
@@ -356,13 +356,11 @@
             const currentMain = document.getElementById("app-main");
             
             if (newMain && currentMain) {
-              // Wir tauschen nur das Innere aus, behalten aber die Layout-Klassen!
+              // Inhaltsaustausch
               currentMain.innerHTML = newMain.innerHTML;
               
-              // Falls die neue Seite andere Klassen für main hat, übernehmen wir die (z.B. max-w-2xl mx-auto)
-              if(newMain.className) {
-                currentMain.className = newMain.className;
-              }
+              // ERZWINGT DIE ZENTRIERTE BREITE (Fix für breite Social-Seite!)
+              currentMain.className = "max-w-2xl mx-auto w-full px-6 py-10 flex-grow flex flex-col justify-center space-y-8";
 
               window.history.pushState({}, "", href);
               window.scrollTo({ top: 0, behavior: "smooth" });
